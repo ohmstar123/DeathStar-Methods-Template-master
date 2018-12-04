@@ -15,6 +15,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Diagnostics;
 using System.Media;
+using System.Threading;
 
 namespace DeathStarExhaustPort
 {
@@ -180,22 +181,160 @@ namespace DeathStarExhaustPort
             offScreen.DrawLine(deathPen, (238 * scale) + x, (4 * scale) + y, (238 * scale) + x, (30 * scale) + y);
             offScreen.DrawLine(deathPen, (163 * scale) + x, (30 * scale) + y, (238 * scale) + x, (30 * scale) + y);
 
-            //Gun of DeathStar
-            //Circles 
-            offScreen.DrawEllipse(deathPen, (260 * scale) + x, (110 * scale) + y, 90 * scale, 120 * scale); //first
-            offScreen.DrawEllipse(deathPen, (300 * scale) + x, (155 * scale) + y, 20 * scale, 30 * scale);  //third
-            offScreen.DrawEllipse(deathPen, (268 * scale) + x, (118 * scale) + y, 75 * scale, 105 * scale); //second
-            offScreen.FillEllipse(beamBrush, (305 * scale) + x, (160 * scale) + y, 10 * scale, 20 * scale); //fourth
+            ////Gun of DeathStar
+            ////Circles 
+            //offScreen.DrawEllipse(deathPen, (260 * scale) + x, (110 * scale) + y, 90 * scale, 120 * scale); //first
+            //offScreen.DrawEllipse(deathPen, (300 * scale) + x, (155 * scale) + y, 20 * scale, 30 * scale);  //third
+            //offScreen.DrawEllipse(deathPen, (268 * scale) + x, (118 * scale) + y, 75 * scale, 105 * scale); //second
+            //offScreen.FillEllipse(beamBrush, (305 * scale) + x, (160 * scale) + y, 10 * scale, 20 * scale); //fourth
 
-            //Lasers
-            offScreen.DrawLine(laserPen, (310 * scale) + x, (170 * scale) + y, (360 * scale) + x, (110 * scale) + y);
-            offScreen.DrawLine(gunPen, (310 * scale) + x, (110 * scale) + y, (360 * scale) + x, (110 * scale) + y);
-            offScreen.DrawLine(gunPen, (337 * scale) + x, (212 * scale) + y, (360 * scale) + x, (110 * scale) + y);
-            offScreen.DrawLine(gunPen, (270 * scale) + x, (130 * scale) + y, (360 * scale) + x, (110 * scale) + y);
-            offScreen.DrawLine(gunPen, (297 * scale) + x, (231 * scale) + y, (360 * scale) + x, (110 * scale) + y);
-            offScreen.DrawLine(gunPen, (260 * scale) + x, (160 * scale) + y, (360 * scale) + x, (110 * scale) + y);
-            offScreen.DrawLine(gunPen, (268 * scale) + x, (205 * scale) + y, (360 * scale) + x, (110 * scale) + y);
-            offScreen.DrawLine(superlaserPen, (360 * scale) + x, (110 * scale) + y, (390 * scale) + x, (80 * scale) + y);
+            ////Lasers
+            //offScreen.DrawLine(laserPen, (310 * scale) + x, (170 * scale) + y, (360 * scale) + x, (110 * scale) + y);
+            //offScreen.DrawLine(gunPen, (310 * scale) + x, (110 * scale) + y, (360 * scale) + x, (110 * scale) + y); //1
+            //offScreen.DrawLine(gunPen, (337 * scale) + x, (212 * scale) + y, (360 * scale) + x, (110 * scale) + y); //2
+            //offScreen.DrawLine(gunPen, (270 * scale) + x, (130 * scale) + y, (360 * scale) + x, (110 * scale) + y); //3
+            //offScreen.DrawLine(gunPen, (297 * scale) + x, (231 * scale) + y, (360 * scale) + x, (110 * scale) + y); //4
+            //offScreen.DrawLine(gunPen, (260 * scale) + x, (160 * scale) + y, (360 * scale) + x, (110 * scale) + y); //5
+            //offScreen.DrawLine(gunPen, (268 * scale) + x, (205 * scale) + y, (360 * scale) + x, (110 * scale) + y); //6
+            //offScreen.DrawLine(superlaserPen, (360 * scale) + x, (110 * scale) + y, (390 * scale) + x, (80 * scale) + y);
+
+
+            for (int i = 1; i <= 9; i++)
+            {
+                switch (i)
+                {
+                    case 1:
+                        offScreen.DrawEllipse(deathPen, (260 * scale) + x, (110 * scale) + y, 90 * scale, 120 * scale); //first
+                        offScreen.DrawEllipse(deathPen, (300 * scale) + x, (155 * scale) + y, 20 * scale, 30 * scale);  //third
+                        offScreen.DrawEllipse(deathPen, (268 * scale) + x, (118 * scale) + y, 75 * scale, 105 * scale); //second
+                        offScreen.FillEllipse(beamBrush, (305 * scale) + x, (160 * scale) + y, 10 * scale, 20 * scale); //fourth
+
+                        Refresh();
+                        Thread.Sleep(633);
+                        break;
+                    case 2:
+                        offScreen.DrawLine(gunPen, (310 * scale) + x, (110 * scale) + y, (360 * scale) + x, (110 * scale) + y);
+
+                        Refresh();
+                        Thread.Sleep(633);
+                        break;
+                    case 3:
+                        offScreen.DrawLine(gunPen, (337 * scale) + x, (212 * scale) + y, (360 * scale) + x, (110 * scale) + y);
+
+                        Refresh();
+                        Thread.Sleep(633);
+                        break;
+                    case 4:
+                        offScreen.DrawLine(gunPen, (270 * scale) + x, (130 * scale) + y, (360 * scale) + x, (110 * scale) + y);
+
+                        Refresh();
+                        Thread.Sleep(633);
+                        break;
+                    case 5:
+                        offScreen.DrawLine(gunPen, (297 * scale) + x, (231 * scale) + y, (360 * scale) + x, (110 * scale) + y);
+
+                        Refresh();
+                        Thread.Sleep(633);
+                        break;
+                    case 6:
+                        offScreen.DrawLine(gunPen, (260 * scale) + x, (160 * scale) + y, (360 * scale) + x, (110 * scale) + y);
+
+                        Refresh();
+                        Thread.Sleep(633);
+                        break;
+                    case 7:
+                        offScreen.DrawLine(gunPen, (268 * scale) + x, (205 * scale) + y, (360 * scale) + x, (110 * scale) + y);
+
+                        Refresh();
+                        Thread.Sleep(633);
+                        break;
+                    case 8:
+                        offScreen.DrawLine(laserPen, (310 * scale) + x, (170 * scale) + y, (360 * scale) + x, (110 * scale) + y);
+
+                        Refresh();
+                        Thread.Sleep(633);
+                        break;
+                    case 9:
+                        offScreen.DrawLine(superlaserPen, (360 * scale) + x, (110 * scale) + y, (390 * scale) + x, (80 * scale) + y);
+                        break;
+                }
+            }
+
+            //{
+            //    if (i == 1)
+            //    {
+            //        offScreen.DrawEllipse(deathPen, (260 * scale) + x, (110 * scale) + y, 90 * scale, 120 * scale); //first
+            //        offScreen.DrawEllipse(deathPen, (300 * scale) + x, (155 * scale) + y, 20 * scale, 30 * scale);  //third
+            //        offScreen.DrawEllipse(deathPen, (268 * scale) + x, (118 * scale) + y, 75 * scale, 105 * scale); //second
+            //        offScreen.FillEllipse(beamBrush, (305 * scale) + x, (160 * scale) + y, 10 * scale, 20 * scale); //fourth
+
+            //        Refresh();
+            //        Thread.Sleep(633);
+            //    }
+
+            //    else if (i == 2)
+            //    {
+            //        offScreen.DrawLine(gunPen, (310 * scale) + x, (110 * scale) + y, (360 * scale) + x, (110 * scale) + y);
+
+            //        Refresh();
+            //        Thread.Sleep(633);
+            //    }
+
+            //    else if (i == 3) 
+            //    {
+            //        offScreen.DrawLine(gunPen, (337 * scale) + x, (212 * scale) + y, (360 * scale) + x, (110 * scale) + y);
+
+            //        Refresh();
+            //        Thread.Sleep(633);
+            //    }
+
+            //    else if (i == 4)
+            //    {
+            //        offScreen.DrawLine(gunPen, (270 * scale) + x, (130 * scale) + y, (360 * scale) + x, (110 * scale) + y);
+
+            //        Refresh();
+            //        Thread.Sleep(633);
+            //    }
+
+            //    else if (i == 5)
+            //    {
+            //        offScreen.DrawLine(gunPen, (297 * scale) + x, (231 * scale) + y, (360 * scale) + x, (110 * scale) + y);
+
+            //        Refresh();
+            //        Thread.Sleep(633);
+            //    }
+
+            //    else if (i == 6)
+            //    {
+            //        offScreen.DrawLine(gunPen, (260 * scale) + x, (160 * scale) + y, (360 * scale) + x, (110 * scale) + y);
+
+            //        Refresh();
+            //        Thread.Sleep(633);
+            //    }
+
+            //    else if (i == 7)
+            //    {
+            //        offScreen.DrawLine(gunPen, (268 * scale) + x, (205 * scale) + y, (360 * scale) + x, (110 * scale) + y);
+
+            //        Refresh();
+            //        Thread.Sleep(633);
+            //    }
+
+            //    else if (i == 8)
+            //    {
+            //        offScreen.DrawLine(laserPen, (310 * scale) + x, (170 * scale) + y, (360 * scale) + x, (110 * scale) + y);
+
+            //        Refresh();
+            //        Thread.Sleep(633);
+            //    }
+
+            //    else if (i == 9)
+            //    {
+            //        Refresh();
+            //        offScreen.DrawLine(superlaserPen, (360 * scale) + x, (110 * scale) + y, (390 * scale) + x, (80 * scale) + y);
+            //    }
+
+            //}
 
 
         }
